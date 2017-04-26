@@ -14,7 +14,8 @@ public class LuciMain {
 	public static void main(String[] args) {
 		JFrame frame = new LuciFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(1000,1000);
+		
+		frame.setSize(LuciFrame.pictureMaxWidth,LuciFrame.pictureMaxHeight*2);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);    
 		frame.setTitle("LUCI Program - SFU Psychology Department");

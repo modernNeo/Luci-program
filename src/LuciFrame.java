@@ -80,8 +80,6 @@ public class LuciFrame extends JFrame{
 		createPreviousButton();
 		savePanel.add(nextPreviousButonsPanel, BorderLayout.NORTH);
 		createSaveButton();
-		
-
 	}
 
 	public void createSaveButton(){

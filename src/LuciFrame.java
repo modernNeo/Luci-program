@@ -49,7 +49,7 @@ public class LuciFrame extends JFrame{
 	String eyeClosedFileName="EyeClosed.jpg";
 	String directory;
 	String windows="\\";
-	String macOS="/";
+	String LinuxUNIX="/";
 	JPanel nextPreviousButonsPanel;
 	/**
 	 * Purpose: to show the initial frame that asks if the user wants to play the game
@@ -57,7 +57,9 @@ public class LuciFrame extends JFrame{
 	public LuciFrame(){
 		
 		if( System.getProperty("os.name").trim().equals("Mac OS X") ){
-			directory = macOS;
+			directory = LinuxUNIX;
+		}else if (System.getProperty("os.name").trim().equals("Linux")){
+			directory=LinuxUNIX;
 		}else{
 			directory = windows;
 		}
@@ -250,7 +252,6 @@ public class LuciFrame extends JFrame{
 		eyeScalePanel = new JPanel(); 
 		EyeDisplayerLabel = new JLabel();
 		eyeOpen = true;
-		System.out.println(System.getProperty("user.dir"));
 		ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
 		Image image = imageIcon.getImage(); // transform it 
 		Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
@@ -617,7 +618,6 @@ public class LuciFrame extends JFrame{
 	}
 	
 	public void resizeImage(){
-		
 		if (pictureDisplayerIcon.getIconHeight() >= pictureMaxHeight){
 			Image image = pictureDisplayerIcon.getImage(); // transform it 
 			Image newimg = image.getScaledInstance(pictureDisplayerIcon.getIconWidth() - ( pictureDisplayerIcon.getIconHeight() - pictureMaxHeight), pictureDisplayerIcon.getIconHeight() - ( pictureDisplayerIcon.getIconHeight() - pictureMaxHeight ) ,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
@@ -628,7 +628,6 @@ public class LuciFrame extends JFrame{
 			Image newimg = image.getScaledInstance(pictureDisplayerIcon.getIconWidth() - (pictureDisplayerIcon.getIconWidth() - pictureMaxWidth ) , pictureDisplayerIcon.getIconHeight() - (pictureDisplayerIcon.getIconWidth()  - pictureMaxWidth),  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 			pictureDisplayerIcon = new ImageIcon(newimg);  // transform it back
 		}
-
 	}
 
 	public void savedataToArray(){

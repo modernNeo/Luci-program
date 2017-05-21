@@ -14,8 +14,8 @@ import javax.imageio.ImageIO;
  * Description: To Play the Loser Game
  */
 public class LuciFrame extends JFrame{
-	public static int pictureMaxHeight=250;
-	public static int pictureMaxWidth=660;
+	public static int pictureMaxHeight=520;
+	public static int pictureMaxWidth=1280;
 	private static final long serialVersionUID = 1L;
 
 	String folderHierarchy;

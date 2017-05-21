@@ -45,6 +45,7 @@ public class LuciFrame extends JFrame{
 	JSpinner scaleSpinner;
 	JPanel folderSpecificationPanel;
 	JTextField folderPathTextField;
+	
 	String eyeOpenFileName="EyeOpen.jpg";
 	String eyeClosedFileName="EyeClosed.jpg";
 	String directory;
@@ -120,7 +121,8 @@ public class LuciFrame extends JFrame{
 
 					if (pictureNames[currentPicIndex][2].equals("1")){
 						eyeOpen = true;
-						ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
+						ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeOpen.jpg"));//System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
+						//ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
 						Image image = imageIcon.getImage(); // transform it 
 						Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 						imageIcon = new ImageIcon(newimg);  // transform it back
@@ -133,7 +135,7 @@ public class LuciFrame extends JFrame{
 						redrawComponent(false, false, false, false, true);
 					}else{
 						eyeOpen = false;
-						ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
+						ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));//System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
 						Image image = imageIcon.getImage(); // transform it 
 						Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 						imageIcon = new ImageIcon(newimg);  // transform it back
@@ -190,7 +192,7 @@ public class LuciFrame extends JFrame{
 					//reload from array
 					if (pictureNames[currentPicIndex][2].equals("1")){
 						eyeOpen = true;
-						ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
+						ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));// System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
 						Image image = imageIcon.getImage(); // transform it 
 						Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 						imageIcon = new ImageIcon(newimg);  // transform it back
@@ -203,7 +205,7 @@ public class LuciFrame extends JFrame{
 						redrawComponent(false, false, false, false, true);
 					}else{
 						eyeOpen = false;
-						ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
+						ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));//System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
 						Image image = imageIcon.getImage(); // transform it 
 						Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 						imageIcon = new ImageIcon(newimg);  // transform it back
@@ -252,7 +254,7 @@ public class LuciFrame extends JFrame{
 		eyeScalePanel = new JPanel(); 
 		EyeDisplayerLabel = new JLabel();
 		eyeOpen = true;
-		ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
+		ImageIcon imageIcon = new ImageIcon(this.getClass().getResource("img/EyeOpen.jpg"));//System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
 		Image image = imageIcon.getImage(); // transform it 
 		Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 		imageIcon = new ImageIcon(newimg);  // transform it back
@@ -270,13 +272,13 @@ public class LuciFrame extends JFrame{
 			public void mouseReleased(MouseEvent event) {
 				ImageIcon imageIcon;
 				if (eyeOpen == true){
-					imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
+					imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));//System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
 					Image image = imageIcon.getImage(); // transform it 
 					Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 					imageIcon = new ImageIcon(newimg);  // transform it back
 				}else{
 
-					imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
+					imageIcon = new ImageIcon(getClass().getResource("img/EyeOpen,jpg"));//System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
 					Image image = imageIcon.getImage(); // transform it 
 					Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 					imageIcon = new ImageIcon(newimg);  // transform it back
@@ -331,7 +333,7 @@ public class LuciFrame extends JFrame{
 
 							if (pictureNames[currentPicIndex][2].equals("1")){
 								eyeOpen = true;
-								ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
+								ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeOpen.jpg"));//System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
 								Image image = imageIcon.getImage(); // transform it 
 								Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 								imageIcon = new ImageIcon(newimg);  // transform it back
@@ -344,7 +346,7 @@ public class LuciFrame extends JFrame{
 								redrawComponent(false, false, false, false, true);
 							}else{
 								eyeOpen = false;
-								ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
+								ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));//System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
 								Image image = imageIcon.getImage(); // transform it 
 								Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 								imageIcon = new ImageIcon(newimg);  // transform it back
@@ -499,7 +501,7 @@ public class LuciFrame extends JFrame{
 
 							if (pictureNames[currentPicIndex][2].equals("1")){
 								eyeOpen = true;
-								ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
+								ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeOpen.jpg"));//System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
 								Image image = imageIcon.getImage(); // transform it 
 								Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 								imageIcon = new ImageIcon(newimg);  // transform it back
@@ -512,7 +514,7 @@ public class LuciFrame extends JFrame{
 								redrawComponent(false, false, false, false, true);
 							}else{
 								eyeOpen = false;
-								ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
+								ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));//System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
 								Image image = imageIcon.getImage(); // transform it 
 								Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 								imageIcon = new ImageIcon(newimg);  // transform it back
@@ -560,7 +562,7 @@ public class LuciFrame extends JFrame{
 							//reload from array
 							if (pictureNames[currentPicIndex][2].equals("1")){
 								eyeOpen = true;
-								ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
+								ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeOpen.jpg"));//System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
 								Image image = imageIcon.getImage(); // transform it 
 								Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 								imageIcon = new ImageIcon(newimg);  // transform it back
@@ -573,7 +575,7 @@ public class LuciFrame extends JFrame{
 								redrawComponent(false, false, false, false, true);
 							}else{
 								eyeOpen = false;
-								ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
+								ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));//System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
 								Image image = imageIcon.getImage(); // transform it 
 								Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 								imageIcon = new ImageIcon(newimg);  // transform it back

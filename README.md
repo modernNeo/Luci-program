@@ -1,4 +1,4 @@
-# Luci-progra
+# Luci-program
 
 this program is used to code the individual frames from the Luci overnight runs.
 

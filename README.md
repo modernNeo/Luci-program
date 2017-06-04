@@ -8,6 +8,10 @@ this program is compiled with eclipse which I also use to create the jar file us
 
 BUGS:
 
+-issue with the program becoming non-responsive
+
+-issues with saving function
+
 TODO:
 
 FEATURES:

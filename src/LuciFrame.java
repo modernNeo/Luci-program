@@ -111,6 +111,7 @@ public class LuciFrame extends JFrame{
 		class createNextButtonListener implements ActionListener
 		{
 			public void actionPerformed(ActionEvent event){
+				savedataToArray();
 				if (currentPicIndex+1 == totalPicIndex){
 					currentPicIndex=0;
 				}else{
@@ -153,6 +154,7 @@ public class LuciFrame extends JFrame{
 					}else{
 						scaleCheckBox.setSelected(true);
 					}
+					System.out.println("currentPicIndex: "+currentPicIndex+" eyeOpen: "+eyeOpen+" ScaleSpinner: "+scaleSpinner.getValue());
 				}
 				time=currentPicIndex*.1757;
 				framePositionLabel = new JLabel("Frame: "+currentPicIndex+", Time: "+time);
@@ -183,6 +185,7 @@ public class LuciFrame extends JFrame{
 		class createPreviousButtonListener implements ActionListener
 		{
 			public void actionPerformed(ActionEvent event){
+				savedataToArray();
 				if (currentPicIndex-1 < 0){
 					currentPicIndex=totalPicIndex-1;
 				}else{
@@ -248,6 +251,7 @@ public class LuciFrame extends JFrame{
 		PreviousButton.addActionListener(PreviousButtonListener);
 		nextPreviousButonsPanel.add(PreviousButton);
 	}
+	
 	public void createEyeScalePanel(){
 		scaleSpinner = new JSpinner(new SpinnerNumberModel(0, 0, 100, 20) );
 		scaleCheckBox = new JCheckBox("I don't know");
@@ -278,7 +282,7 @@ public class LuciFrame extends JFrame{
 					imageIcon = new ImageIcon(newimg);  // transform it back
 				}else{
 
-					imageIcon = new ImageIcon(getClass().getResource("img/EyeOpen,jpg"));//System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
+					imageIcon = new ImageIcon(getClass().getResource("img/EyeOpen.jpg"));//System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
 					Image image = imageIcon.getImage(); // transform it 
 					Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 					imageIcon = new ImageIcon(newimg);  // transform it back
@@ -483,7 +487,6 @@ public class LuciFrame extends JFrame{
 		pictureDisplayerLabel = new JLabel(pictureDisplayerIcon);
 		reAddComponents(true, false, false, false, false);
 	}	
-
 	public void RegisterMouseWheelAction(){
 		class MouseWheelChanged implements MouseWheelListener{
 			public void mouseWheelMoved(MouseWheelEvent e) {
@@ -635,6 +638,7 @@ public class LuciFrame extends JFrame{
 	public void savedataToArray(){
 		//save frame
 		if (totalPicIndex >= 1){
+			System.out.println("currentPicIndex: "+currentPicIndex+" eyeOpen: "+eyeOpen+" ScaleSpinner: "+scaleSpinner.getValue());
 			pictureNames[currentPicIndex][1]=Double.toString(time);
 			if (eyeOpen == true){
 				pictureNames[currentPicIndex][2]="1";

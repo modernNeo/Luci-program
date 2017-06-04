@@ -14,7 +14,6 @@ public class LuciMain {
 	public static void main(String[] args) {
 		JFrame frame = new LuciFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		frame.setSize(LuciFrame.pictureMaxWidth,LuciFrame.pictureMaxHeight*2);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);    

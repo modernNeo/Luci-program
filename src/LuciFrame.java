@@ -45,7 +45,7 @@ public class LuciFrame extends JFrame{
 	JSpinner scaleSpinner;
 	JPanel folderSpecificationPanel;
 	JTextField folderPathTextField;
-	
+	ImageIcon imageIcon;
 	String eyeOpenFileName="EyeOpen.jpg";
 	String eyeClosedFileName="EyeClosed.jpg";
 	String directory;
@@ -79,8 +79,8 @@ public class LuciFrame extends JFrame{
 	public void createSaveAndClosePanel(){
 		savePanel = new JPanel(new BorderLayout()); 
 		nextPreviousButonsPanel = new JPanel();
-		createNextButton();
 		createPreviousButton();
+		createNextButton();
 		savePanel.add(nextPreviousButonsPanel, BorderLayout.NORTH);
 		createSaveButton();
 	}
@@ -122,31 +122,24 @@ public class LuciFrame extends JFrame{
 
 					if (pictureNames[currentPicIndex][2].equals("1")){
 						eyeOpen = true;
-						ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeOpen.jpg"));//System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
-						//ImageIcon imageIcon = new ImageIcon(System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
-						Image image = imageIcon.getImage(); // transform it 
-						Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
-						imageIcon = new ImageIcon(newimg);  // transform it back
+						resizeEyeScaleIcon("EyeClosed");
+						removeEyeScalePanel(); //removeComponents(false, false, true, false);
 						EyeDisplayerLabel.setIcon(imageIcon);
-						removeComponents(false, false, true, false, false);
-						reAddComponents(false, false, true, false, false);
-						redrawComponent(false, false, true, false, false);
-						removeComponents(false, false, false, false, true);
-						reAddComponents(false, false, false, false, true);
-						redrawComponent(false, false, false, false, true);
+						reAddEyeScalePanel(); //reAddComponents(false, false, true, false);
+						reDrawEyeScalePanel(); //redrawComponent(false, false, true, false);
+						removeControlPanel(); //removeComponents(false, false, false, true);
+						reAddControlPanel(); //reAddComponents(false, false, false, true);
+						reDrawControlPanel(); //redrawComponent(false, false, false, true);
 					}else{
 						eyeOpen = false;
-						ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));//System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
-						Image image = imageIcon.getImage(); // transform it 
-						Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
-						imageIcon = new ImageIcon(newimg);  // transform it back
+						resizeEyeScaleIcon("EyeOpen");
+						removeEyeScalePanel(); //removeComponents(false, false, true, false);
 						EyeDisplayerLabel.setIcon(imageIcon);
-						removeComponents(false, false, true, false, false);
-						reAddComponents(false, false, true, false, false);
-						redrawComponent(false, false, true, false, false);
-						removeComponents(false, false, false, false, true);
-						reAddComponents(false, false, false, false, true);
-						redrawComponent(false, false, false, false, true);
+						reAddEyeScalePanel(); //reAddComponents(false, false, true, false);
+						reDrawEyeScalePanel(); //redrawComponent(false, false, true, false);
+						removeControlPanel(); //removeComponents(false, false, false, true);
+						reAddControlPanel(); //reAddComponents(false, false, false, true);
+						reDrawControlPanel(); //redrawComponent(false, false, false, true);
 					}
 					if (Integer.parseInt(pictureNames[currentPicIndex][3]) != 999){
 						scaleSpinner.setValue(Integer.parseInt(pictureNames[currentPicIndex][3]));
@@ -154,25 +147,24 @@ public class LuciFrame extends JFrame{
 					}else{
 						scaleCheckBox.setSelected(true);
 					}
-					System.out.println("currentPicIndex: "+currentPicIndex+" eyeOpen: "+eyeOpen+" ScaleSpinner: "+scaleSpinner.getValue());
 				}
 				time=currentPicIndex*.1757;
 				framePositionLabel = new JLabel("Frame: "+currentPicIndex+", Time: "+time);
-				removeComponents(false, true, false, false, false);
-				reAddComponents(false, true, false, false, false);
-				redrawComponent(false, true, false, false, false);
+				
+				removeFrameJumpPanel(); //removeComponents(false, true, false, false);
+				reAddFrameJumpPanel(); //reAddComponents(false, true, false, false);
+				reDrawFrameJumpPanel(); //redrawComponent(false, true, false, false);
 
 				pictureDisplayerIcon = new ImageIcon(folderHierarchy+directory+pictureNames[currentPicIndex][0]); // load the image to a imageIcon
 
 				resizeImage();
 
 
-				removeComponents(true,false , false, false, false);
-				reAddComponents(true, false, false, false, false);
-				redrawComponent(true, false, false, false, false);
-				removeComponents(false,false , false, false, true);
-				reAddComponents(false, false, false, false, true);
-				redrawComponent(false, false, false, false, true);
+				removePictureDisplayPanel(); //removeComponents(true,false , false, false);
+				reDrawPictureDisplayPanel(); //redrawComponent(true, false, false, false);
+				removeControlPanel(); //removeComponents(false,false , false, true);
+				reAddControlPanel(); //reAddComponents(false, false, false, true);
+				reDrawControlPanel(); //redrawComponent(false, false, false, true);
 			}
 		}
 		ActionListener NextButtonListener = new createNextButtonListener();
@@ -195,30 +187,24 @@ public class LuciFrame extends JFrame{
 					//reload from array
 					if (pictureNames[currentPicIndex][2].equals("1")){
 						eyeOpen = true;
-						ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));// System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
-						Image image = imageIcon.getImage(); // transform it 
-						Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
-						imageIcon = new ImageIcon(newimg);  // transform it back
+						resizeEyeScaleIcon("EyeClosed");
+						removeEyeScalePanel(); //removeComponents(false, false, true, false);
 						EyeDisplayerLabel.setIcon(imageIcon);
-						removeComponents(false, false, true, false, false);
-						reAddComponents(false, false, true, false, false);
-						redrawComponent(false, false, true, false, false);
-						removeComponents(false, false, false, false, true);
-						reAddComponents(false, false, false, false, true);
-						redrawComponent(false, false, false, false, true);
+						reAddEyeScalePanel(); //reAddComponents(false, false, true, false);
+						reDrawEyeScalePanel(); //redrawComponent(false, false, true, false);
+						removeControlPanel(); //removeComponents(false, false, false, true);
+						reAddControlPanel(); //reAddComponents(false, false, false, true);
+						reDrawControlPanel(); //redrawComponent(false, false, false, true);
 					}else{
 						eyeOpen = false;
-						ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));//System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
-						Image image = imageIcon.getImage(); // transform it 
-						Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
-						imageIcon = new ImageIcon(newimg);  // transform it back
+						resizeEyeScaleIcon("EyeOpen");
+						removeEyeScalePanel(); //removeComponents(false, false, true, false);
 						EyeDisplayerLabel.setIcon(imageIcon);
-						removeComponents(false, false, true, false, false);
-						reAddComponents(false, false, true, false, false);
-						redrawComponent(false, false, true, false, false);
-						removeComponents(false, false, false, false, true);
-						reAddComponents(false, false, false, false, true);
-						redrawComponent(false, false, false, false, true);
+						reAddEyeScalePanel(); //reAddComponents(false, false, true, false);
+						reDrawEyeScalePanel(); //redrawComponent(false, false, true, false);
+						removeEyeScalePanel(); //removeComponents(false, false, false, true);
+						reAddEyeScalePanel(); //reAddComponents(false, false, false, true);
+						reDrawEyeScalePanel(); //redrawComponent(false, false, false, true);
 					}
 					if (Integer.parseInt(pictureNames[currentPicIndex][3]) != 999){
 						scaleSpinner.setValue(Integer.parseInt(pictureNames[currentPicIndex][3]));
@@ -229,21 +215,21 @@ public class LuciFrame extends JFrame{
 				}
 				time=currentPicIndex*.1757;
 				framePositionLabel = new JLabel("Frame: "+currentPicIndex+", Time: "+time);
-				removeComponents(false, true, false, false, false);
-				reAddComponents(false, true, false, false, false);
-				redrawComponent(false, true, false, false, false);
+				
+				removeFrameJumpPanel(); //removeComponents(false, true, false, false);
+				reAddFrameJumpPanel(); //reAddComponents(false, true, false, false);
+				reDrawFrameJumpPanel(); //redrawComponent(false, true, false, false);
 
 				pictureDisplayerIcon = new ImageIcon(folderHierarchy+directory+pictureNames[currentPicIndex][0]); // load the image to a imageIcon
 
 				resizeImage();
 
 
-				removeComponents(true,false , false, false, false);
-				reAddComponents(true, false, false, false, false);
-				redrawComponent(true, false, false, false, false);
-				removeComponents(false,false , false, false, true);
-				reAddComponents(false, false, false, false, true);
-				redrawComponent(false, false, false, false, true);
+				removePictureDisplayPanel(); //removeComponents(true,false , false, false);
+				reDrawPictureDisplayPanel(); //redrawComponent(true, false, false, false);
+				removeControlPanel(); //removeComponents(false,false , false, true);
+				reAddControlPanel(); //reAddComponents(false, false, false, true);
+				reDrawControlPanel(); //redrawComponent(false, false, false, true);
 			}
 		}
 		ActionListener PreviousButtonListener = new createPreviousButtonListener();
@@ -251,7 +237,12 @@ public class LuciFrame extends JFrame{
 		PreviousButton.addActionListener(PreviousButtonListener);
 		nextPreviousButonsPanel.add(PreviousButton);
 	}
-	
+	public void resizeEyeScaleIcon(String iconName){
+		imageIcon = new ImageIcon(getClass().getResource("img/"+iconName+".jpg"));//System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
+		Image image = imageIcon.getImage(); // transform it 
+		Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+		imageIcon = new ImageIcon(newimg);  // transform it back
+	}
 	public void createEyeScalePanel(){
 		scaleSpinner = new JSpinner(new SpinnerNumberModel(0, 0, 100, 20) );
 		scaleCheckBox = new JCheckBox("I don't know");
@@ -266,7 +257,7 @@ public class LuciFrame extends JFrame{
 		EyeDisplayerLabel.setIcon(imageIcon);
 		switchEyesOpenClosed();
 
-		reAddComponents(false, false, true, false, false);
+		reAddEyeScalePanel(); //reAddComponents(false, false, true, false);
 	}
 
 	public void switchEyesOpenClosed(){
@@ -289,16 +280,16 @@ public class LuciFrame extends JFrame{
 				}
 				eyeOpen=!eyeOpen;
 
-
+				removeEyeScalePanel(); //removeComponents(false, false, true, false);
 
 				EyeDisplayerLabel.setIcon(imageIcon);
 
-				removeComponents(false, false, true, false, false);
-				reAddComponents(false, false, true, false, false);
-				redrawComponent(false, false, true, false, false);
-				removeComponents(false, false, false, false, true);
-				reAddComponents(false, false, false, false, true);
-				redrawComponent(false, false, false, false, true);
+				
+				reAddEyeScalePanel(); //reAddComponents(false, false, true, false);
+				reDrawEyeScalePanel(); //redrawComponent(false, false, true, false);
+				removeControlPanel(); //removeComponents(false, false, false, true);
+				reAddControlPanel(); //reAddComponents(false, false, false, true);
+				reDrawControlPanel(); //redrawComponent(false, false, false, true);
 			}
 			public void mouseClicked(MouseEvent event) {}
 			public void mouseEntered(MouseEvent event) {}
@@ -337,30 +328,32 @@ public class LuciFrame extends JFrame{
 
 							if (pictureNames[currentPicIndex][2].equals("1")){
 								eyeOpen = true;
+								removeEyeScalePanel(); //removeComponents(false, false, true, false);
 								ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeOpen.jpg"));//System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
 								Image image = imageIcon.getImage(); // transform it 
 								Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 								imageIcon = new ImageIcon(newimg);  // transform it back
 								EyeDisplayerLabel.setIcon(imageIcon);
-								removeComponents(false, false, true, false, false);
-								reAddComponents(false, false, true, false, false);
-								redrawComponent(false, false, true, false, false);
-								removeComponents(false, false, false, false, true);
-								reAddComponents(false, false, false, false, true);
-								redrawComponent(false, false, false, false, true);
+								
+								reAddEyeScalePanel(); //reAddComponents(false, false, true, false);
+								reDrawEyeScalePanel(); //redrawComponent(false, false, true, false);
+								removeControlPanel(); //removeComponents(false, false, false, true);
+								reAddControlPanel(); //reAddComponents(false, false, false, true);
+								reDrawControlPanel(); //redrawComponent(false, false, false, true);
 							}else{
 								eyeOpen = false;
+								removeEyeScalePanel(); //removeComponents(false, false, true, false);
 								ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));//System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
 								Image image = imageIcon.getImage(); // transform it 
 								Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 								imageIcon = new ImageIcon(newimg);  // transform it back
 								EyeDisplayerLabel.setIcon(imageIcon);
-								removeComponents(false, false, true, false, false);
-								reAddComponents(false, false, true, false, false);
-								redrawComponent(false, false, true, false, false);
-								removeComponents(false, false, false, false, true);
-								reAddComponents(false, false, false, false, true);
-								redrawComponent(false, false, false, false, true);
+								
+								reAddEyeScalePanel(); //reAddComponents(false, false, true, false);
+								reDrawEyeScalePanel(); //redrawComponent(false, false, true, false);
+								removeControlPanel(); //removeComponents(false, false, false, true);
+								reAddControlPanel(); //reAddComponents(false, false, false, true);
+								reDrawControlPanel(); //redrawComponent(false, false, false, true);
 							}
 							if (Integer.parseInt(pictureNames[currentPicIndex][3]) != 999){
 								scaleSpinner.setValue(Integer.parseInt(pictureNames[currentPicIndex][3]));
@@ -370,22 +363,20 @@ public class LuciFrame extends JFrame{
 							}
 						}
 						time=currentPicIndex*.1757;
-						removeComponents(false, true, false, false, false);
+						removeFrameJumpPanel(); //removeComponents(false, true, false, false);
 						framePositionLabel = new JLabel("Frame: "+currentPicIndex+", Time: "+time);
-						reAddComponents(false, true, false, false, false);
-						redrawComponent(false, true, false, false, false);	
+						reAddFrameJumpPanel(); //reAddComponents(false, true, false, false);
+						reDrawFrameJumpPanel(); //redrawComponent(false, true, false, false);	
 
 
 						pictureDisplayerIcon = new ImageIcon(folderHierarchy+directory+pictureNames[currentPicIndex][0]); // load the image to a imageIcon
 
 						resizeImage();
 
-						reAddComponents(true, false, false, false, false);
-						reAddComponents(true, false, false, false, false);
-						redrawComponent(true, false, false, false, false);
-						reAddComponents(false, false, false, false, true);
-						reAddComponents(false, false, false, false, true);
-						redrawComponent(false, false, false, false, true);
+						reAddPictureDisplayPanel(); //reAddComponents(true, false, false, false);
+						reDrawPictureDisplayPanel(); //redrawComponent(true, false, false, false);
+						reAddControlPanel(); //reAddComponents(false, false, false, true);
+						reDrawControlPanel(); //redrawComponent(false, false, false, true);
 					}
 				}
 			}
@@ -449,14 +440,14 @@ public class LuciFrame extends JFrame{
 				}
 			}
 		}
-		removeComponents(false, true, false, false, false);
+		removeFrameJumpPanel(); //removeComponents(false, true, false, false);
 		framePositionLabel = new JLabel("Frame: 0, Time: 0");
-		reAddComponents(false, true, false, false, false);
-		redrawComponent(false, true, false, false, false);
+		reAddFrameJumpPanel(); //reAddComponents(false, true, false, false);
+		reDrawFrameJumpPanel(); //redrawComponent(false, true, false, false);
 
-		removeComponents(false, false, false, false, true);
-		reAddComponents(false, false, false, false, true);
-		redrawComponent(false, false, false, false, true);
+		removeControlPanel(); //removeComponents(false, false, false, true);
+		reAddControlPanel(); //reAddComponents(false, false, false, true);
+		reDrawControlPanel(); //redrawComponent(false, false, false, true);
 
 		currentPicIndex=0;
 		totalPicIndex=numberOfPhotos;
@@ -468,24 +459,23 @@ public class LuciFrame extends JFrame{
 		
 		resizeImage();
 		
-		reAddComponents(true, false, false, false, false);
+		reAddPictureDisplayPanel(); //reAddComponents(true, false, false, false);
 
-		reAddComponents(true, false, false, false, false);
-		redrawComponent(true, false, false, false, false);
+		reDrawPictureDisplayPanel(); //redrawComponent(true, false, false, false);
 	}
 
 	public void createControlPanel(){
 		controlPanel = new JPanel(); 
 		controlPanel.setLayout(new BorderLayout());
 		controlPanel.setPreferredSize(new Dimension(200, 200));
-		reAddComponents(false, false, false, false, true);
+		reAddControlPanel(); //reAddComponents(false, false, false, true);
 	}
 
 	public void createPictureDisplayPanel(){
 		pictureDisplayPanel = new JPanel();
 		pictureDisplayerIcon = new ImageIcon();
 		pictureDisplayerLabel = new JLabel(pictureDisplayerIcon);
-		reAddComponents(true, false, false, false, false);
+		reAddPictureDisplayPanel(); //reAddComponents(true, false, false, false);
 	}	
 	public void RegisterMouseWheelAction(){
 		class MouseWheelChanged implements MouseWheelListener{
@@ -504,30 +494,32 @@ public class LuciFrame extends JFrame{
 
 							if (pictureNames[currentPicIndex][2].equals("1")){
 								eyeOpen = true;
+								removeEyeScalePanel(); //removeComponents(false, false, true, false);
 								ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeOpen.jpg"));//System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
 								Image image = imageIcon.getImage(); // transform it 
 								Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 								imageIcon = new ImageIcon(newimg);  // transform it back
 								EyeDisplayerLabel.setIcon(imageIcon);
-								removeComponents(false, false, true, false, false);
-								reAddComponents(false, false, true, false, false);
-								redrawComponent(false, false, true, false, false);
-								removeComponents(false, false, false, false, true);
-								reAddComponents(false, false, false, false, true);
-								redrawComponent(false, false, false, false, true);
+								
+								reAddEyeScalePanel(); //reAddComponents(false, false, true, false);
+								reDrawEyeScalePanel(); //redrawComponent(false, false, true, false);
+								removeControlPanel(); //removeComponents(false, false, false, true);
+								reAddControlPanel(); //reAddComponents(false, false, false, true);
+								reDrawControlPanel(); //redrawComponent(false, false, false, true);
 							}else{
 								eyeOpen = false;
+								removeEyeScalePanel(); //removeComponents(false, false, true, false);
 								ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));//System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
 								Image image = imageIcon.getImage(); // transform it 
 								Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 								imageIcon = new ImageIcon(newimg);  // transform it back
 								EyeDisplayerLabel.setIcon(imageIcon);
-								removeComponents(false, false, true, false, false);
-								reAddComponents(false, false, true, false, false);
-								redrawComponent(false, false, true, false, false);
-								removeComponents(false, false, false, false, true);
-								reAddComponents(false, false, false, false, true);
-								redrawComponent(false, false, false, false, true);
+								
+								reAddEyeScalePanel(); //reAddComponents(false, false, true, false);
+								reDrawEyeScalePanel(); //redrawComponent(false, false, true, false);
+								removeControlPanel(); //removeComponents(false, false, false, true);
+								reAddControlPanel(); //reAddComponents(false, false, false, true);
+								reDrawControlPanel(); //redrawComponent(false, false, false, true);
 							}
 							if (Integer.parseInt(pictureNames[currentPicIndex][3]) != 999){
 								scaleSpinner.setValue(Integer.parseInt(pictureNames[currentPicIndex][3]));
@@ -538,9 +530,9 @@ public class LuciFrame extends JFrame{
 						}
 						time=currentPicIndex*.1757;
 						framePositionLabel = new JLabel("Frame: "+currentPicIndex+", Time: "+time);
-						removeComponents(false, true, false, false, false);
-						reAddComponents(false, true, false, false, false);
-						redrawComponent(false, true, false, false, false);
+						removeFrameJumpPanel(); //removeComponents(false, true, false, false);
+						reAddFrameJumpPanel(); //reAddComponents(false, true, false, false);
+						reDrawFrameJumpPanel(); //redrawComponent(false, true, false, false);
 
 						pictureDisplayerIcon = new ImageIcon(folderHierarchy+directory+pictureNames[currentPicIndex][0]); // load the image to a imageIcon
 
@@ -548,12 +540,12 @@ public class LuciFrame extends JFrame{
 						resizeImage();
 
 
-						removeComponents(true,false , false, false, false);
-						reAddComponents(true, false, false, false, false);
-						redrawComponent(true, false, false, false, false);
-						removeComponents(false,false , false, false, true);
-						reAddComponents(false, false, false, false, true);
-						redrawComponent(false, false, false, false, true);
+						removePictureDisplayPanel(); //removeComponents(true,false , false, false);
+						reAddPictureDisplayPanel(); //reAddComponents(true, false, false, false);
+						reDrawPictureDisplayPanel(); //redrawComponent(true, false, false, false);
+						removeControlPanel(); //removeComponents(false,false , false, true);
+						reAddControlPanel(); //reAddComponents(false, false, false, true);
+						reDrawControlPanel(); //redrawComponent(false, false, false, true);
 
 					} else {
 						if (currentPicIndex-1 < 0){
@@ -565,30 +557,32 @@ public class LuciFrame extends JFrame{
 							//reload from array
 							if (pictureNames[currentPicIndex][2].equals("1")){
 								eyeOpen = true;
+								removeEyeScalePanel(); //removeComponents(false, false, true, false);
 								ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeOpen.jpg"));//System.getProperty("user.dir")+directory+eyeOpenFileName); // load the image to a imageIcon
 								Image image = imageIcon.getImage(); // transform it 
 								Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 								imageIcon = new ImageIcon(newimg);  // transform it back
 								EyeDisplayerLabel.setIcon(imageIcon);
-								removeComponents(false, false, true, false, false);
-								reAddComponents(false, false, true, false, false);
-								redrawComponent(false, false, true, false, false);
-								removeComponents(false, false, false, false, true);
-								reAddComponents(false, false, false, false, true);
-								redrawComponent(false, false, false, false, true);
+								
+								reAddEyeScalePanel(); //reAddComponents(false, false, true, false);
+								reDrawEyeScalePanel(); //redrawComponent(false, false, true, false);
+								removeControlPanel(); //removeComponents(false, false, false, true);
+								reAddControlPanel(); //reAddComponents(false, false, false, true);
+								reDrawControlPanel(); //redrawComponent(false, false, false, true);
 							}else{
 								eyeOpen = false;
+								removeEyeScalePanel(); //removeComponents(false, false, true, false);
 								ImageIcon imageIcon = new ImageIcon(getClass().getResource("img/EyeClosed.jpg"));//System.getProperty("user.dir")+directory+eyeClosedFileName); // load the image to a imageIcon
 								Image image = imageIcon.getImage(); // transform it 
 								Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 								imageIcon = new ImageIcon(newimg);  // transform it back
 								EyeDisplayerLabel.setIcon(imageIcon);
-								removeComponents(false, false, true, false, false);
-								reAddComponents(false, false, true, false, false);
-								redrawComponent(false, false, true, false, false);
-								removeComponents(false, false, false, false, true);
-								reAddComponents(false, false, false, false, true);
-								redrawComponent(false, false, false, false, true);
+								
+								reAddEyeScalePanel(); //reAddComponents(false, false, true, false);
+								reDrawEyeScalePanel(); //redrawComponent(false, false, true, false);
+								removeControlPanel(); //removeComponents(false, false, false, true);
+								reAddControlPanel(); //reAddComponents(false, false, false, true);
+								reDrawControlPanel(); //redrawComponent(false, false, false, true);
 							}
 							if (Integer.parseInt(pictureNames[currentPicIndex][3]) != 999){
 								scaleSpinner.setValue(Integer.parseInt(pictureNames[currentPicIndex][3]));
@@ -599,21 +593,21 @@ public class LuciFrame extends JFrame{
 						}
 						time=currentPicIndex*.1757;
 						framePositionLabel = new JLabel("Frame: "+currentPicIndex+", Time: "+time);
-						removeComponents(false, true, false, false, false);
-						reAddComponents(false, true, false, false, false);
-						redrawComponent(false, true, false, false, false);
+						removeFrameJumpPanel(); //removeComponents(false, true, false, false);
+						reAddFrameJumpPanel(); //reAddComponents(false, true, false, false);
+						reDrawFrameJumpPanel(); //redrawComponent(false, true, false, false);
 
 						pictureDisplayerIcon = new ImageIcon(folderHierarchy+directory+pictureNames[currentPicIndex][0]); // load the image to a imageIcon
 
 						resizeImage();
 
 
-						removeComponents(true,false , false, false, false);
-						reAddComponents(true, false, false, false, false);
-						redrawComponent(true, false, false, false, false);
-						removeComponents(false,false , false, false, true);
-						reAddComponents(false, false, false, false, true);
-						redrawComponent(false, false, false, false, true);
+						removePictureDisplayPanel(); //removeComponents(true,false , false, false);
+						reAddPictureDisplayPanel(); //reAddComponents(true, false, false, false);
+						reDrawPictureDisplayPanel(); //redrawComponent(true, false, false, false);
+						removeControlPanel(); //removeComponents(false,false , false, true);
+						reAddControlPanel(); //reAddComponents(false, false, false, true);
+						reDrawControlPanel(); //redrawComponent(false, false, false, true);
 					}
 				}
 			}
@@ -654,8 +648,32 @@ public class LuciFrame extends JFrame{
 		}
 
 	}
-
-	public void removeComponents(boolean boolPictureDisplayPanel, boolean boolFrameJumpPanel, boolean boolEyeScalePanel, boolean boolFolderSpecificationPanel, boolean boolControlPanel){
+	
+	public void removePictureDisplayPanel(){
+		remove(pictureDisplayPanel);
+		pictureDisplayPanel.removeAll();
+		pictureDisplayerLabel.removeAll();		
+	}
+	public void removeFrameJumpPanel(){
+		remove(controlPanel);
+		controlPanel.removeAll();
+		jumpPanel.removeAll();
+		jumpPanelTop.removeAll();
+		jumpPanelBottom.removeAll();			
+	}
+	public void removeEyeScalePanel(){
+		remove(controlPanel);
+		controlPanel.removeAll();
+		EyeDisplayerLabel.removeAll();
+		eyeScalePanel.removeAll();
+		eyeScaleControlsPanel.removeAll();
+		eyeScaleControlsInputPanel.removeAll();
+	}
+	public void removeControlPanel(){
+		remove(controlPanel);
+		controlPanel.removeAll();		
+	}
+/*	public void removeComponents(boolean boolPictureDisplayPanel, boolean boolFrameJumpPanel, boolean boolEyeScalePanel, boolean boolControlPanel){
 		if (boolPictureDisplayPanel){
 			remove(pictureDisplayPanel);
 			pictureDisplayPanel.removeAll();
@@ -671,23 +689,49 @@ public class LuciFrame extends JFrame{
 		if (boolEyeScalePanel){
 			remove(controlPanel);
 			controlPanel.removeAll();
+			EyeDisplayerLabel.removeAll();
 			eyeScalePanel.removeAll();
 			eyeScaleControlsPanel.removeAll();
 			eyeScaleControlsInputPanel.removeAll();
-		}
-		if (boolFolderSpecificationPanel){
-			remove(controlPanel);
-			controlPanel.removeAll();
-			folderSpecificationPanel.removeAll();
-
 		}
 		if (boolControlPanel){
 			remove(controlPanel);
 			controlPanel.removeAll();
 		}
+	}*/
+	
+	public void reAddPictureDisplayPanel(){
+		pictureDisplayerLabel.setIcon(pictureDisplayerIcon);
+		pictureDisplayPanel.add(pictureDisplayerLabel);
+		add(pictureDisplayPanel, BorderLayout.NORTH);		
 	}
-
-	public void reAddComponents(boolean boolPictureDisplayPanel, boolean boolFrameJumpPanel, boolean boolEyeScalePanel, boolean boolFolderSpecificationPanel, boolean boolControlPanel){
+	public void reAddFrameJumpPanel(){
+		jumpPanelTop.add(new JLabel("Jump to Frame: "));
+		jumpPanelTop.add(frameSpecifierField);
+		JumpFrameButtonMaker(jumpPanelBottom);
+		jumpPanelBottom.add(framePositionLabel);
+		jumpPanel.add(jumpPanelBottom, BorderLayout.CENTER);
+		jumpPanel.add(jumpPanelTop, BorderLayout.NORTH);		
+	}
+	public void reAddEyeScalePanel(){
+		eyeScaleControlsInputPanel = new JPanel(new BorderLayout());
+		eyeScaleControlsInputPanel.add(scaleSpinner, BorderLayout.NORTH);
+		eyeScaleControlsInputPanel.add(scaleCheckBox, BorderLayout.CENTER);
+		eyeScaleControlsPanel = new JPanel(new BorderLayout());
+		eyeScaleControlsPanel.add(new JLabel("Scale for Eyes Closed"), BorderLayout.NORTH);
+		eyeScaleControlsPanel.add(eyeScaleControlsInputPanel, BorderLayout.CENTER);
+		eyeScalePanel = new JPanel(new BorderLayout());
+		eyeScalePanel.add(EyeDisplayerLabel, BorderLayout.WEST);
+		eyeScalePanel.add(eyeScaleControlsPanel, BorderLayout.EAST);		
+	}
+	public void reAddControlPanel(){
+		controlPanel.add(folderSpecificationPanel, BorderLayout.PAGE_START);
+		controlPanel.add(jumpPanel, BorderLayout.LINE_START);
+		controlPanel.add(eyeScalePanel, BorderLayout.CENTER);
+		controlPanel.add(savePanel, BorderLayout.LINE_END);
+		add(controlPanel, BorderLayout.SOUTH);			
+	}
+	/*public void reAddComponents(boolean boolPictureDisplayPanel, boolean boolFrameJumpPanel, boolean boolEyeScalePanel, boolean boolControlPanel){
 
 		if (boolEyeScalePanel){
 			eyeScaleControlsInputPanel = new JPanel(new BorderLayout());
@@ -703,15 +747,15 @@ public class LuciFrame extends JFrame{
 
 
 		if (boolFrameJumpPanel){
-			/*System.out.println("1");
-			jumpPanel.add(new JLabel("Jump to Frame: "));
-			System.out.println("2");
-			jumpPanel.add(frameSpecifierField);
-			System.out.println("3");
-			JumpFrameButtonMaker(jumpPanel);
-			System.out.println("4");
-			jumpPanel.add(framePositionLabel);
-			System.out.println("5");*/
+			//System.out.println("1");
+			//jumpPanel.add(new JLabel("Jump to Frame: "));
+			//System.out.println("2");
+			//jumpPanel.add(frameSpecifierField);
+			//System.out.println("3");
+			//JumpFrameButtonMaker(jumpPanel);
+			//System.out.println("4");
+			//jumpPanel.add(framePositionLabel);
+			//System.out.println("5");
 			
 									
 			jumpPanelTop.add(new JLabel("Jump to Frame: "));
@@ -735,9 +779,43 @@ public class LuciFrame extends JFrame{
 			add(pictureDisplayPanel, BorderLayout.NORTH);
 
 		}
-	}
+	}*/
 
-	public void redrawComponent(boolean boolPictureDisplayPanel, boolean boolFrameJumpPanel, boolean boolEyeScalePanel, boolean boolFolderSpecificationPanel, boolean boolControlPanel){
+	public void reDrawPictureDisplayPanel(){
+		pictureDisplayPanel.validate();
+		pictureDisplayPanel.repaint();
+		validate();
+		repaint();
+	}
+	public void reDrawFrameJumpPanel(){
+		jumpPanel.validate();
+		jumpPanel.repaint();
+		controlPanel.validate();
+		controlPanel.repaint();
+		validate();
+		repaint();
+	}
+	public void reDrawEyeScalePanel(){
+		eyeScaleControlsInputPanel.validate();
+		eyeScaleControlsInputPanel.repaint();
+		eyeScaleControlsPanel.validate();
+		eyeScaleControlsPanel.repaint();
+		EyeDisplayerLabel.validate();
+		EyeDisplayerLabel.repaint();
+		eyeScalePanel.validate();
+		eyeScalePanel.repaint();
+		controlPanel.validate();
+		controlPanel.repaint();
+		validate();
+		repaint();		
+	}
+	public void reDrawControlPanel(){
+		controlPanel.validate();
+		controlPanel.repaint();
+		validate();
+		repaint();		
+	}
+	/*public void redrawComponent(boolean boolPictureDisplayPanel, boolean boolFrameJumpPanel, boolean boolEyeScalePanel, boolean boolControlPanel){
 
 		if (boolPictureDisplayPanel){
 			pictureDisplayPanel.validate();
@@ -758,18 +836,12 @@ public class LuciFrame extends JFrame{
 			eyeScaleControlsInputPanel.repaint();
 			eyeScaleControlsPanel.validate();
 			eyeScaleControlsPanel.repaint();
+			EyeDisplayerLabel.validate();
+			EyeDisplayerLabel.repaint();
 			eyeScalePanel.validate();
 			eyeScalePanel.repaint();
 			controlPanel.validate();
 			controlPanel.repaint();
-			validate();
-			repaint();
-		}
-		if (boolFolderSpecificationPanel){
-			controlPanel.add(folderSpecificationPanel);
-			controlPanel.add(jumpPanel);
-			controlPanel.add(eyeScalePanel);
-			controlPanel.add(savePanel);
 			validate();
 			repaint();
 		}
@@ -779,6 +851,6 @@ public class LuciFrame extends JFrame{
 			validate();
 			repaint();
 		}
-	}
+	}*/
 
 }

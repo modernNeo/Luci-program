@@ -10,7 +10,29 @@ BUGS:
 
 -issue with the program becoming non-responsive
 
-
 TODO:
 
 FEATURES:
+
+Panel & Object Hierarchy:
++ControlPanel
++-->folderSpecificationPanel
++--+-->folderChooserButton
++--+-->folderPathTextField
++-->JumpPanel
++--+-->JumpPanelTop
++--+--+-->JLabel("Jump To Frame")
++--+--+-->frameSpecifierField
++-->eyeScalePanel
++--+-->EyeDisplayerLabel
++--+--+-->EyesOpenClosedListener
++--+-->EyeScaleControlpanel
++--+--+-->eyeScaleControlsInputPanel
++--+--+--+-->ScaleSpinner
++--+--+--+-->ScaleCheckBox
++--+--+-->JLabel("Scale for Eyes Closed")
++-->SavePanel
++--+-->nextPreviousButtonPanel
++--+--+-->previousButton
++--+--+-->nextButton
++--+-->saveButton

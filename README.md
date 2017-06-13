@@ -12,10 +12,10 @@ all that is needed to run program is the "Luci.jar" file
 -make the save function replace exiting file with new file
 
 ### FEATURES:
--uses mouse-wheel as well as button navigation to flip between the successive pictures
--clicking on the eyeopen and eyeclosed icons causes them to flip between each other
--"I dont know" checkbox overrides the scale for eyes open field
--the program will only work if it opens a folder and not a file
+-uses mouse-wheel as well as button navigation to flip between the successive pictures  
+-clicking on the eyeopen and eyeclosed icons causes them to flip between each other  
+-"I dont know" checkbox overrides the scale for eyes open field  
+-the program will only work if it opens a folder and not a file  
 
 
 # Panel & Object Hierarchy:

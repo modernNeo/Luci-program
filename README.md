@@ -15,7 +15,7 @@ TODO:
 FEATURES:
 
 Panel & Object Hierarchy:
-+ControlPanel
+```+ControlPanel
 +-->folderSpecificationPanel
 +--+-->folderChooserButton
 +--+-->folderPathTextField
@@ -36,3 +36,5 @@ Panel & Object Hierarchy:
 +--+--+-->previousButton
 +--+--+-->nextButton
 +--+-->saveButton
+```
+

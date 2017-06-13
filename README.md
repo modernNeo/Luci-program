@@ -6,15 +6,21 @@ all that is needed to run program is the jar file
 
 this program is compiled with eclipse which I also use to create the jar file using the instructions: https://www.cs.utexas.edu/~scottm/cs307/handouts/Eclipse%20Help/jarInEclipse.htm
 
-BUGS:
+###BUGS:
 
 -issue with the program becoming non-responsive
 
-TODO:
+###TODO:
+-make the save function replace exiting file with new file
 
-FEATURES:
+###FEATURES:
+-uses mouse-wheel as well as button navigation to flip between the successive pictures
+-clicking on the eyeopen and eyeclosed icons causes them to flip between each other
+-"I dont know" checkbox overrides the scale for eyes open field
+-the program will only work if it opens a folder and not a file
 
-Panel & Object Hierarchy:
+
+#Panel & Object Hierarchy:
 ```+ControlPanel
 +-->folderSpecificationPanel
 +--+-->folderChooserButton
@@ -37,7 +43,7 @@ Panel & Object Hierarchy:
 +--+--+-->nextButton
 +--+-->saveButton
 ```
-Jar Creation with Eclipse  
+#Jar Creation with Eclipse  
 Step 1.  
 ![Step 1](https://github.com/modernNeo/Luci-program/blob/master/creating%20Jar%20with%20eclipse/Step%201.png "Step 1")
 Step 2.  

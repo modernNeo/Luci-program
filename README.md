@@ -10,7 +10,6 @@ BUGS:
 
 -issue with the program becoming non-responsive
 
--issues with saving function
 
 TODO:
 

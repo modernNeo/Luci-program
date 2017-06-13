@@ -37,10 +37,10 @@ Panel & Object Hierarchy:
 +--+--+-->nextButton
 +--+-->saveButton
 ```
-Jar Creation with Eclipse __
-Step 1. __
+Jar Creation with Eclipse__
+Step 1.__
 ![Step 1](https://github.com/modernNeo/Luci-program/blob/master/creating%20Jar%20with%20eclipse/Step%201.png "Step 1")
-Step 2. __
+Step 2.__
 ![Step 2](https://github.com/modernNeo/Luci-program/blob/master/creating%20Jar%20with%20eclipse/Step%202.png "Step 2")
-Step 3. __
+Step 3.__
 ![Step 3](https://github.com/modernNeo/Luci-program/blob/master/creating%20Jar%20with%20eclipse/Step%203.png "Step 3")

@@ -1,0 +1,66 @@
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.exe
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.pdb
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.xml
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.Form1.resources
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.Resources.resources
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.vbproj.GenerateResource.Cache
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.exe
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.xml
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.pdb
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.exe.manifest
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.application
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.exe.manifest
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.application
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.exe
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.xml
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.pdb
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.exe.manifest
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.application
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.exe
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.pdb
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.xml
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.Form1.resources
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.Resources.resources
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.vbproj.GenerateResource.Cache
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.exe.manifest
+C:/Users/Bert/Desktop/Dropbox/Programming/VB/LuciVideoCoder2.1/LuciVideoCoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.application
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.exe.manifest
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.application
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.exe
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.pdb
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.xml
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.Form1.resources
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.Resources.resources
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.vbproj.GenerateResource.Cache
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.exe.manifest
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.application
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.exe
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.xml
+C:/Bert/Programming/VB/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.pdb
+E:/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.exe
+E:/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.xml
+E:/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.pdb
+E:/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.vbprojResolveAssemblyReference.cache
+E:/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.Form1.resources
+E:/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.Resources.resources
+E:/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.vbproj.GenerateResource.Cache
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.Form1.resources
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.Resources.resources
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.vbproj.GenerateResource.Cache
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.exe
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.xml
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.pdb
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.exe.manifest
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.application
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.exe
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.pdb
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/bin/Debug/LuciVideoCoder2.xml
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.exe.manifest
+C:/Users/Jason Manshad/Documents/Luci crap/LuciVideoCoder2.1/lucivideocoder2/LuciVideoCoder2/obj/x86/Debug/LuciVideoCoder2.application
+/Users/jason_manshad/Google Drive/lucivideocoder2/lucivideocoder2/obj/x86/Debug/LuciVideoCoder2.vbprojResolveAssemblyReference.cache
+/Users/jason_manshad/Google Drive/lucivideocoder2/lucivideocoder2/obj/x86/Debug/LuciVideoCoder2.Form1.resources
+/Users/jason_manshad/Google Drive/lucivideocoder2/lucivideocoder2/obj/x86/Debug/LuciVideoCoder2.Resources.resources
+/Users/jason_manshad/Google Drive/lucivideocoder2/lucivideocoder2/obj/x86/Debug/LuciVideoCoder2.vbproj.GenerateResource.Cache
+/Users/jason_manshad/Google Drive/lucivideocoder2/lucivideocoder2/obj/x86/Debug/LuciVideoCoder2.vbproj.CoreCompileInputs.cache
+/Users/jason_manshad/Google Drive/lucivideocoder2/lucivideocoder2/obj/x86/Debug/LuciVideoCoder2.exe
+/Users/jason_manshad/Google Drive/lucivideocoder2/lucivideocoder2/obj/x86/Debug/LuciVideoCoder2.xml

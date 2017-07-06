@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="LuciVideoCoder2.exe" version="1.0.0.0" publicKeyToken="0c7ba06c22a5c67e" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="LuciVideoCoder2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="LuciVideoCoder2.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LuciVideoCoder2.exe" size="66560">
+      <assemblyIdentity name="LuciVideoCoder2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>rjOqRvum8p2QSKFEXLeORsKY1m0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+<publisherIdentity name="CN=BERT-HP\Bert" issuerKeyHash="480ed5c5bfc18f07bf50fc5e2991015d1b703108" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>JQ0YtLjZO1mVtTNfrWCG9JW7xyo=</DigestValue></Reference></SignedInfo><SignatureValue>AARSlYzaUDcT3A2rYBQev4lUAeom3uw8tZQTCt5aLYBUltakwimx6w3LP5VpSLnE+MQnKONOHQAIMD//NC3lj79hUyve6VtTyLQKxdZhINyR/LFdvGttVY9FdzuhmxLidNdG6ih877eqDJM2Sf9UzDeH3PYW2kQwdheEcriS+ZY=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>mdKHY9OKXal3u/AcCb+o1TAvZAbFkTcsgxAj9/dM5/2v6g6OM2v68LDKsGjq+QzhNXIVExgAJmr+13ZwRFRhNdcGxZHkso4biP4Y27zo0GqqgezuobdWyBPnbP/lkJ7ZFv8NZmw6XFS2dhskOuHrWeJ4vfWH99MZHMl5M1mQHPE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="2ac7bb95f48660ad5f33b595593bd9b8b4180d25" Description="" Url=""><as:assemblyIdentity name="LuciVideoCoder2.exe" version="1.0.0.0" publicKeyToken="0c7ba06c22a5c67e" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=BERT-HP\Bert</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>B7weCfjsy/T2GUuNF5Iqksdz15k=</DigestValue></Reference></SignedInfo><SignatureValue>QHhf1YS+xKxHNHn3i5wHaexJCwRgxLnZcAJig+6G3vLJVUjj0X2I1qe+AI2PGQ3rj2AO3xhuPp9Ntz4/yeqNgssBsL+rpP37n/D53bWGVPGtdkJ4s+uqPpbsR9TvFlk1eWZjrx0poZ5NMZzpatJXc35Gax+aU/RHC/25sFOlim8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>mdKHY9OKXal3u/AcCb+o1TAvZAbFkTcsgxAj9/dM5/2v6g6OM2v68LDKsGjq+QzhNXIVExgAJmr+13ZwRFRhNdcGxZHkso4biP4Y27zo0GqqgezuobdWyBPnbP/lkJ7ZFv8NZmw6XFS2dhskOuHrWeJ4vfWH99MZHMl5M1mQHPE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQMM9dc7HJoaVJlNu1X1lvUzANBgkqhkiG9w0BAQUFADAjMSEwHwYDVQQDHhgAQgBFAFIAVAAtAEgAUABcAEIAZQByAHQwHhcNMTUwMjE2MTcxNjI1WhcNMTYwMjE2MjMxNjI1WjAjMSEwHwYDVQQDHhgAQgBFAFIAVAAtAEgAUABcAEIAZQByAHQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAJnSh2PTil2pd7vwHAm/qNUwL2QGxZE3LIMQI/f3TOf9r+oOjjNr+vCwyrBo6vkM4TVyFRMYACZq/td2cERUYTXXBsWR5LKOG4j+GNu86NBqqoHs7qG3VsgT52z/5ZCe2Rb/DWZsOlxUtnYbJDrh61nieL31h/fTGRzJeTNZkBzxAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEACb+fVVNnI0nxY21h4l0e6PD6PtnB+IY05/Ehy36CruooDddgrNEtOiwyhmOaPLQ55IHvCPskA1EXrVp3EG+84JjAAAxIQ3kEZR9mAgCYlAwqQuFJsFwxLBjFbc5pbSn+rQXTFiXvd2yIoKAqzokF0H3/+G3NdEkOm+fC/dif+0Q=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

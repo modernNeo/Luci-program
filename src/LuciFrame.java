@@ -56,7 +56,7 @@ public class LuciFrame extends JFrame{
 	 * Purpose: to show the initial frame that asks if the user wants to play the game
 	 */
 	public LuciFrame(){
-		
+
 		if( System.getProperty("os.name").trim().equals("Mac OS X") ){
 			directory = LinuxUNIX;
 		}else if (System.getProperty("os.name").trim().equals("Linux")){
@@ -90,7 +90,7 @@ public class LuciFrame extends JFrame{
 			public void actionPerformed(ActionEvent event){
 				try{
 					savedataToArray();//makes sure the info about the current pic is also saved
-					PrintWriter writer = new PrintWriter("output.csv", "UTF-8");
+					PrintWriter writer = new PrintWriter(folderHierarchy+directory+"output.csv", "UTF-8");
 					writer.println( "Frame,Time,EyeOpen, Scale For Eyes Closed");
 					for (int i = 0 ; i < totalPicIndex ; i++){
 						writer.print(pictureNames[i][0]+","+pictureNames[i][1]+",");
@@ -151,11 +151,11 @@ public class LuciFrame extends JFrame{
 	}
 	public void createEyeScalePanel(){
 		scaleSpinner = new JSpinner(new SpinnerNumberModel(0, 0, 100, 20) );
-		scaleCheckBox = new JCheckBox("I don't know");
+
 		eyeScalePanel = new JPanel(); 
 		EyeDisplayerLabel = new JLabel();
 		eyeOpen = true;
-		
+		IDKCheckBoxToggled();
 		resizeEyeScaleIcon("EyeOpen");
 
 		EyeDisplayerLabel.setIcon(imageIcon);
@@ -164,6 +164,24 @@ public class LuciFrame extends JFrame{
 		reAddEyeScalePanel();
 	}
 
+	public void IDKCheckBoxToggled(){
+		class idkCheckBoxListener implements ActionListener
+		{
+			public void actionPerformed(ActionEvent event){
+				if (scaleCheckBox.isSelected()){
+					EyeDisplayerLabel.setEnabled(false);
+					scaleSpinner.setEnabled(false);
+				}else{
+					EyeDisplayerLabel.setEnabled(true);
+					scaleSpinner.setEnabled(true);
+					scaleSpinner.setValue(0);
+				}
+			}
+		}
+		ActionListener idkCheckListener = new idkCheckBoxListener();
+		scaleCheckBox = new JCheckBox("I don't know");
+		scaleCheckBox.addActionListener(idkCheckListener);
+	}
 	public void switchEyesOpenClosed(){
 		class detectEyesOpenClosedListener implements MouseListener
 		{
@@ -181,7 +199,7 @@ public class LuciFrame extends JFrame{
 
 				EyeDisplayerLabel.setIcon(imageIcon);
 
-				
+
 				reAddEyeScalePanel();
 				reDrawEyeScalePanel();
 				removeControlPanel();
@@ -199,16 +217,16 @@ public class LuciFrame extends JFrame{
 	public void createtimeFramePanel(){
 		jumpPanel = new JPanel(new BorderLayout()); 
 		jumpPanelTop = new JPanel();
-		
+
 		frameSpecifierField = new JTextField("          ");
 		framePositionLabel = new JLabel("Frame: X, Time: Y");
-		
+
 		jumpPanelTop.add(new JLabel("Jump to Frame: "));
 		jumpPanelTop.add(frameSpecifierField);
 		jumpPanelBottom = new JPanel();
 		JumpFrameButtonMaker(jumpPanelBottom);
 		jumpPanelBottom.add(framePositionLabel);
-		
+
 		jumpPanel.add(jumpPanelBottom, BorderLayout.CENTER);
 		jumpPanel.add(jumpPanelTop, BorderLayout.NORTH);
 	}	
@@ -227,7 +245,7 @@ public class LuciFrame extends JFrame{
 								eyeOpen = true;
 								resizeEyeScaleIcon("EyeOpen");
 								EyeDisplayerLabel.setIcon(imageIcon);
-								
+
 								reAddEyeScalePanel();
 								reDrawEyeScalePanel();
 								removeControlPanel();
@@ -238,7 +256,7 @@ public class LuciFrame extends JFrame{
 								//removeEyeScalePanel();
 								resizeEyeScaleIcon("EyeClosed");
 								EyeDisplayerLabel.setIcon(imageIcon);
-								
+
 								reAddEyeScalePanel();
 								reDrawEyeScalePanel();
 								removeControlPanel();
@@ -315,6 +333,7 @@ public class LuciFrame extends JFrame{
 	}
 
 	public void loadImagesFromFolder() throws IOException{
+		JOptionPane.showMessageDialog(null,"Press OK to Load Pictures", "Loadng pictures....", JOptionPane.OK_OPTION);
 		File folder = new File(folderHierarchy);
 		File[] listOfFiles = folder.listFiles();
 
@@ -346,9 +365,9 @@ public class LuciFrame extends JFrame{
 			pictures[i]=false;
 		}
 		pictureDisplayerIcon = new ImageIcon(folderHierarchy+directory+pictureNames[currentPicIndex][0]); // load the image to a imageIcon
-		
+
 		resizeImage();
-		
+
 		reAddPictureDisplayPanel();
 
 		reDrawPictureDisplayPanel();
@@ -367,7 +386,7 @@ public class LuciFrame extends JFrame{
 		pictureDisplayerLabel = new JLabel(pictureDisplayerIcon);
 		reAddPictureDisplayPanel();
 	}	
-	
+
 	public void RegisterMouseWheelAction(){
 		class MouseWheelChanged implements MouseWheelListener{
 			public void mouseWheelMoved(MouseWheelEvent e) {
@@ -384,46 +403,52 @@ public class LuciFrame extends JFrame{
 		MouseWheelListener mouseWheelListener = new MouseWheelChanged();
 		addMouseWheelListener(mouseWheelListener);
 	}
-	
+
 	public void goToNextPic(){
 		savedataToArray();
 		if (currentPicIndex+1 == totalPicIndex){
+			JOptionPane.showMessageDialog(null,null, "Looped back to first Picture", JOptionPane.OK_OPTION);
 			currentPicIndex=0;
 		}else{
 			currentPicIndex++;
 		}
 		if (pictures[currentPicIndex]){
 			//reload from array
-
-			if (pictureNames[currentPicIndex][2].equals("1")){
-				eyeOpen = true;
-				//removeEyeScalePanel();
-				resizeEyeScaleIcon("EyeOpen");
-				EyeDisplayerLabel.setIcon(imageIcon);
-				
-				reAddEyeScalePanel();
-				reDrawEyeScalePanel();
-				removeControlPanel();
-				reAddControlPanel();
-				reDrawControlPanel();
+			if (Integer.parseInt(pictureNames[currentPicIndex][3]) == 999){
+				scaleSpinner.setValue(Integer.parseInt(pictureNames[currentPicIndex][3]));
+				scaleCheckBox.setSelected(true);
+				EyeDisplayerLabel.setEnabled(false);
+				scaleSpinner.setEnabled(false);
 			}else{
-				eyeOpen = false;
-				//removeEyeScalePanel();
-				resizeEyeScaleIcon("EyeClosed");
-				EyeDisplayerLabel.setIcon(imageIcon);
-				
-				reAddEyeScalePanel();
-				reDrawEyeScalePanel();
-				removeControlPanel();
-				reAddControlPanel();
-				reDrawControlPanel();
-			}
-			if (Integer.parseInt(pictureNames[currentPicIndex][3]) != 999){
 				scaleSpinner.setValue(Integer.parseInt(pictureNames[currentPicIndex][3]));
 				scaleCheckBox.setSelected(false);
-			}else{
-				scaleCheckBox.setSelected(true);
+				EyeDisplayerLabel.setEnabled(true);
+				scaleSpinner.setEnabled(true);
+				if (pictureNames[currentPicIndex][2].equals("1")){
+					eyeOpen = true;
+					//removeEyeScalePanel();
+					resizeEyeScaleIcon("EyeOpen");
+					EyeDisplayerLabel.setIcon(imageIcon);
+
+					reAddEyeScalePanel();
+					reDrawEyeScalePanel();
+					removeControlPanel();
+					reAddControlPanel();
+					reDrawControlPanel();
+				}else{
+					eyeOpen = false;
+					//removeEyeScalePanel();
+					resizeEyeScaleIcon("EyeClosed");
+					EyeDisplayerLabel.setIcon(imageIcon);
+
+					reAddEyeScalePanel();
+					reDrawEyeScalePanel();
+					removeControlPanel();
+					reAddControlPanel();
+					reDrawControlPanel();
+				}
 			}
+
 		}
 		time=currentPicIndex*.1757;
 		framePositionLabel = new JLabel("Frame: "+currentPicIndex+", Time: "+time);
@@ -449,39 +474,45 @@ public class LuciFrame extends JFrame{
 		savedataToArray();
 		if (currentPicIndex-1 < 0){
 			currentPicIndex=totalPicIndex-1;
+			JOptionPane.showMessageDialog(null,null, "Looped back to first Picture", JOptionPane.OK_OPTION);
 		}else{
 			currentPicIndex--;
 		}
 		if (pictures[currentPicIndex]){
 			//reload from array
-			if (pictureNames[currentPicIndex][2].equals("1")){
-				eyeOpen = true;
-				//removeEyeScalePanel();
-				resizeEyeScaleIcon("EyeOpen");
-				EyeDisplayerLabel.setIcon(imageIcon);
-				
-				reAddEyeScalePanel();
-				reDrawEyeScalePanel();
-				removeControlPanel();
-				reAddControlPanel();
-				reDrawControlPanel();
+			if (Integer.parseInt(pictureNames[currentPicIndex][3]) == 999){
+				scaleSpinner.setValue(Integer.parseInt(pictureNames[currentPicIndex][3]));
+				scaleCheckBox.setSelected(true);
+				EyeDisplayerLabel.setEnabled(false);
+				scaleSpinner.setEnabled(false);
 			}else{
-				eyeOpen = false;
-				//removeEyeScalePanel();
-				resizeEyeScaleIcon("EyeClosed");
-				EyeDisplayerLabel.setIcon(imageIcon);
-				
-				reAddEyeScalePanel();
-				reDrawEyeScalePanel();
-				removeControlPanel();
-				reAddControlPanel();
-				reDrawControlPanel();
-			}
-			if (Integer.parseInt(pictureNames[currentPicIndex][3]) != 999){
 				scaleSpinner.setValue(Integer.parseInt(pictureNames[currentPicIndex][3]));
 				scaleCheckBox.setSelected(false);
-			}else{
-				scaleCheckBox.setSelected(true);
+				EyeDisplayerLabel.setEnabled(true);
+				scaleSpinner.setEnabled(true);
+				if (pictureNames[currentPicIndex][2].equals("1")){
+					eyeOpen = true;
+					//removeEyeScalePanel();
+					resizeEyeScaleIcon("EyeOpen");
+					EyeDisplayerLabel.setIcon(imageIcon);
+
+					reAddEyeScalePanel();
+					reDrawEyeScalePanel();
+					removeControlPanel();
+					reAddControlPanel();
+					reDrawControlPanel();
+				}else{
+					eyeOpen = false;
+					//removeEyeScalePanel();
+					resizeEyeScaleIcon("EyeClosed");
+					EyeDisplayerLabel.setIcon(imageIcon);
+
+					reAddEyeScalePanel();
+					reDrawEyeScalePanel();
+					removeControlPanel();
+					reAddControlPanel();
+					reDrawControlPanel();
+				}
 			}
 		}
 		time=currentPicIndex*.1757;
